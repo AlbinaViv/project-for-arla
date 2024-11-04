@@ -11,11 +11,8 @@
 }
 
 .button {
-  border-radius: 15px;
   padding: 10px 20px;
-  color: whitesmoke;
   box-shadow: -1px -1px 5px white;
-  transition: all 0.2s ease-in-out;
 }
 .button:hover {
   box-shadow: -2px -2px 5px white;

@@ -1,19 +1,18 @@
-import { useEffect, lazy } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { useDispatch } from "react-redux";
-import { Route, Routes } from "react-router-dom";
-import { Toaster } from "react-hot-toast";
-import { PrivateRoute } from "../PrivateRoute";
-import { Layout } from "../Layout";
-import { refreshUser } from "../../redux/auth/operations";
-import { useAuth } from "../../hooks";
-import { RestrictedRoute } from "../RestrictedRoute";
-import css from "./App.module.css";
+import { useEffect, lazy } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useDispatch } from 'react-redux';
+import { Route, Routes } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+import { PrivateRoute } from '../PrivateRoute';
+import { Layout } from '../Layout';
+import { refreshUser } from '../../redux/auth/operations';
+import { useAuth } from '../../hooks';
+import { RestrictedRoute } from '../RestrictedRoute';
+import css from './App.module.css';
 
-const Home = lazy(() => import("../../pages/Home/Home"));
-const RegisterPage = lazy(() => import("../../pages/Register"));
-const LoginPage = lazy(() => import("../../pages/Login"));
-const ContactsPage = lazy(() => import("../../pages/Contacts"));
+const RegisterPage = lazy(() => import('../../pages/Register'));
+const LoginPage = lazy(() => import('../../pages/Login'));
+const Dashboard = lazy(() => import('../../pages/Dashboard'));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -29,10 +28,7 @@ export const App = () => {
     <>
       <AnimatePresence>
         <Routes>
-          <Route
-            path="/"
-            element={<Layout />}
-          >
+          <Route path="/" element={<Layout />}>
             <Route
               index
               element={
@@ -42,7 +38,7 @@ export const App = () => {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Home />
+                  {/* <Home /> */}
                 </motion.div>
               }
             />
@@ -50,7 +46,7 @@ export const App = () => {
               path="/register"
               element={
                 <RestrictedRoute
-                  redirectTo="/contacts"
+                  redirectTo="/dashboard"
                   component={
                     <motion.div
                       initial={{ opacity: 0 }}
@@ -68,7 +64,7 @@ export const App = () => {
               path="/login"
               element={
                 <RestrictedRoute
-                  redirectTo="/contacts"
+                  redirectTo="/dashboard"
                   component={
                     <motion.div
                       initial={{ opacity: 0 }}
@@ -83,7 +79,7 @@ export const App = () => {
               }
             />
             <Route
-              path="/contacts"
+              path="/dashboard"
               element={
                 <PrivateRoute
                   redirectTo="/login"
@@ -94,7 +90,7 @@ export const App = () => {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <ContactsPage />
+                      <Dashboard />
                     </motion.div>
                   }
                 />

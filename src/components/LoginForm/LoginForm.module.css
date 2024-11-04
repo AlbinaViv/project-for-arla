@@ -36,25 +36,6 @@
   font-size: 12px; /* Размер шрифта для ошибок */
 }
 
-.button {
-  padding: 12px;
-  border-radius: 8px;
-  background-color: #4caf50;
-  color: #fff;
-  transition:
-    background-color 0.3s,
-    box-shadow 0.3s;
-}
-
-.button:hover {
-  background-color: #388e3c; /* Темно-зеленый цвет при наведении */
-}
-
-.button:focus {
-  outline: none; /* Убрать контур */
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Тень при фокусе */
-}
-
 @media (max-width: 480px) {
   .container {
     width: 90%; /* Ширина контейнера на мобильных устройствах */
