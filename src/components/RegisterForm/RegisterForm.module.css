@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 20px;
+  border: 1px solid #cce5cc; /* Светло-зеленая рамка */
+  border-radius: 12px; /* Закругленные углы */
+  background-color: #f9fff9; /* Светлый фон */
+  box-shadow: 13px 13px 17px 9px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  margin-bottom: 20px; /* Отступ снизу заголовка */
+  text-align: center; /* Центрирование текста */
+  color: #2e7d32; /* Темно-зеленый цвет */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Занять всю ширину контейнера */
+}
+
+.field {
+  margin-bottom: 16px; /* Отступ снизу каждого поля */
+}
+
+.input {
+  border-radius: 8px; /* Закругленные углы для полей ввода */
+}
+
+.error {
+  color: #d32f2f; /* Красный цвет для текста ошибок */
+  font-size: 12px; /* Размер шрифта для ошибок */
+}
+
+.button {
+  padding: 12px !important;
+  border-radius: 8px !important;
+  background-color: #4caf50 !important;
+  color: #fff !important;
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s !important;
+}
+
+.button:hover {
+  background-color: #388e3c !important; /* Темно-зеленый цвет при наведении */
+}
+
+.button:focus {
+  outline: none; /* Убрать контур */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5) !important; /* Тень при фокусе */
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 90%; /* Ширина контейнера на мобильных устройствах */
+    padding: 15px; /* Уменьшенный отступ */
+  }
+}

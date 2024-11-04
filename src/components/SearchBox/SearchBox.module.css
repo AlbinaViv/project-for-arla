@@ -1,0 +1,34 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  padding: 20px;
+  margin: 18px;
+  border-radius: 20px;
+  /* background-color: #4c6551; */
+}
+
+.input {
+  border: 0;
+  outline: 0;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  padding: 10px;
+  appearance: none;
+  box-shadow: -1px -1px 5px white;
+  transition: all 0.2s ease-in-out;
+}
+
+.label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.input:hover {
+  box-shadow: -2px -2px 5px white;
+}
+.input:active {
+  color: white;
+  box-shadow: inset 1px 1px 2px;
+}

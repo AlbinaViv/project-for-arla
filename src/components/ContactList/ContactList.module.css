@@ -1,0 +1,9 @@
+.contactList {
+  display: flex;
+  flex-wrap: wrap; /* Разрешает перенос элементов на следующую строку */
+  gap: 20px;
+  justify-content: left;
+}
+
+@media screen and (min-width: 768px) {
+}

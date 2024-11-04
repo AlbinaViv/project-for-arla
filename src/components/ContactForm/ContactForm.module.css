@@ -1,0 +1,44 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Вирівнюємо всі елементи форми по лівій стороні */
+  height: 100%;
+  width: 300px;
+  padding: 20px;
+  margin: 18px;
+  border-radius: 15px;
+  background-color: #4c6551;
+}
+
+.field {
+  width: 100%; /* Поле вводу розтягується на всю ширину контейнера */
+  border: 0;
+  outline: 0;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  padding: 5px;
+  padding-right: 0;
+  appearance: none;
+}
+
+.field:focus {
+  box-shadow: inset 1px 1px 2px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 10px;
+  text-align: left; /* Вирівнювання тексту лейбла по лівій стороні */
+  width: 100%; /* Лейбл займає всю ширину контейнера */
+}
+
+.button {
+  border-radius: 15px;
+  padding: 10px 20px;
+  width: 100%; /* Лейбл займає всю ширину контейнера */
+
+  color: whitesmoke;
+  box-shadow: -1px -1px 5px white;
+  transition: all;
+}

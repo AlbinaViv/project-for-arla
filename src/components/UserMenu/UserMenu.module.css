@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  gap: 22px;
+  align-content: center;
+  align-items: center;
+  padding-right: 18px;
+}
+
+.username {
+  font-size: 30px;
+}
+
+.button {
+  border-radius: 15px;
+  padding: 10px 20px;
+  color: whitesmoke;
+  box-shadow: -1px -1px 5px white;
+  transition: all 0.2s ease-in-out;
+}
+.button:hover {
+  box-shadow: -2px -2px 5px white;
+}
+.button:active {
+  color: white;
+  box-shadow: inset 1px 1px 2px;
+}

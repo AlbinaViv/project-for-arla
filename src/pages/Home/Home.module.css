@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mainTitle {
+  /* width: 100px; */
+  text-align: center;
+  font-size: 100px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: rgb(28, 187, 100);
+
+  padding-top: 10%;
+  margin-bottom: 10px;
+}
