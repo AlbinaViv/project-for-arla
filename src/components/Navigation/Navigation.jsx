@@ -1,22 +1,26 @@
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../../hooks';
+import { useDispatch } from 'react-redux';
+import { logOut } from '../../redux/auth/operations';
 import css from './Navigation.module.css';
-import clsx from 'clsx';
-
-const buildLinkClass = ({ isActive }) => {
-  return clsx(css.link, isActive && css.active);
-};
+import { SearchBox } from '../SearchBox/SearchBox';
+import { UserMenu } from '../UserMenu/UserMenu';
 
 export const Navigation = () => {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn, user } = useAuth();
+  const dispatch = useDispatch();
 
   return (
-    <nav>
+    <nav className={css.nav}>
       {isLoggedIn && (
-        <NavLink className={buildLinkClass} to="/dashboard">
-          Dashboard
-        </NavLink>
+        <>
+          <SearchBox />
+          <NavLink className={css.dashboard} to="/dashboard">
+            Dashboard
+          </NavLink>
+        </>
       )}
+      {isLoggedIn && <UserMenu />}
     </nav>
   );
 };

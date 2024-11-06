@@ -10,25 +10,39 @@
 }
 
 .input {
-  border: 0;
-  outline: 0;
-  margin-bottom: 10px;
-  border-radius: 20px;
-  padding: 10px;
-  appearance: none;
-  box-shadow: -1px -1px 5px white;
-  transition: all 0.2s ease-in-out;
+  fill: #f5f6fa;
+  width: 388px;
+  height: 38px;
+  box-sizing: border-box;
+  border: 0.6px solid rgb(213, 213, 213);
+  border-radius: 19px;
+  background: rgb(245, 246, 250);
 }
 
 .label {
-  display: block;
-  margin-bottom: 10px;
+  position: absolute;
+  top: 5%;
+  left: 21%;
+  left: 23%;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: rgb(136 138 140);
 }
 
 .input:hover {
   box-shadow: -2px -2px 5px white;
 }
 .input:active {
-  color: white;
   box-shadow: inset 1px 1px 2px;
+}
+.icon {
+  position: absolute;
+  top: 5%;
+  left: 21%;
+  fill: rgb(136 138 140);
+  width: 18px;
+  height: 18px;
 }

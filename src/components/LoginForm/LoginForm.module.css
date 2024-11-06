@@ -35,6 +35,26 @@
   color: #d32f2f; /* Красный цвет для текста ошибок */
   font-size: 12px; /* Размер шрифта для ошибок */
 }
+.title {
+  width: 100%;
+  height: 25px;
+  opacity: 65%;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.06px;
+  color: #202224;
+  text-align: center;
+}
+.link {
+  color: #007bff; /* Set color for link */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold;
+} /* Make it stand out */
+
+.link:hover {
+  text-decoration: underline; /* Add underline on hover */
+  color: #0056b3; /* Darker color on hover */
+}
 
 @media (max-width: 480px) {
   .container {

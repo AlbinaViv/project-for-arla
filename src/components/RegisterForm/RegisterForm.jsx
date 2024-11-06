@@ -1,16 +1,17 @@
-import { useDispatch } from "react-redux";
-import { register } from "../../redux/auth/operations";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
-import { Button, TextField, Box, Typography } from "@mui/material";
-import css from "./RegisterForm.module.css";
+import { useDispatch } from 'react-redux';
+import { register } from '../../redux/auth/operations';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import { Button, TextField, Box, Typography } from '@mui/material';
+import css from './RegisterForm.module.css';
+import { Link } from 'react-router-dom';
 
 const validationSchema = Yup.object({
-  name: Yup.string().min(3, "Too Short!").required("Required"),
-  email: Yup.string().email("Invalid email").required("Required"),
+  name: Yup.string().min(3, 'Too Short!').required('Required'),
+  email: Yup.string().email('Invalid email').required('Required'),
   password: Yup.string()
-    .min(6, "Password must be at least 6 characters")
-    .required("Required"),
+    .min(6, 'Password must be at least 6 characters')
+    .required('Required'),
 });
 
 export const RegisterForm = () => {
@@ -23,15 +24,11 @@ export const RegisterForm = () => {
 
   return (
     <Box className={css.container}>
-      <Typography
-        variant="h5"
-        gutterBottom
-        className={css.title}
-      >
+      <Typography variant="h5" gutterBottom className={css.title}>
         Register
       </Typography>
       <Formik
-        initialValues={{ name: "", email: "", password: "" }}
+        initialValues={{ name: '', email: '', password: '' }}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
@@ -39,16 +36,16 @@ export const RegisterForm = () => {
           <Form className={css.form}>
             <Box className={css.field}>
               <Field
-                name="name"
+                name="email"
                 as={TextField}
-                label="Username"
+                label="Email"
                 fullWidth
                 variant="outlined"
                 className={css.input}
                 helperText={
                   <ErrorMessage
-                    name="name"
-                    component="div"
+                    name="email"
+                    component="span"
                     className={css.error}
                   />
                 }
@@ -65,7 +62,7 @@ export const RegisterForm = () => {
                 helperText={
                   <ErrorMessage
                     name="email"
-                    component="div"
+                    component="span"
                     className={css.error}
                   />
                 }
@@ -83,7 +80,7 @@ export const RegisterForm = () => {
                 helperText={
                   <ErrorMessage
                     name="password"
-                    component="div"
+                    component="span"
                     className={css.error}
                   />
                 }
@@ -99,6 +96,12 @@ export const RegisterForm = () => {
             >
               Register
             </Button>
+            <Box className={css.title} textAlign="center" mt={2}>
+              Already have an account?{' '}
+              <Link to="/login" className={css.link}>
+                Login{' '}
+              </Link>
+            </Box>
           </Form>
         )}
       </Formik>

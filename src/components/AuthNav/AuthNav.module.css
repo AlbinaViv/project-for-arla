@@ -6,3 +6,10 @@
   color: #0b810b;
   font-size: 30px;
 }
+
+.register {
+  visibility: hidden;
+}
+.login {
+  visibility: hidden;
+}

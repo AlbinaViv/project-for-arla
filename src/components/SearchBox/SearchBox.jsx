@@ -2,6 +2,7 @@ import css from './SearchBox.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { filtersContactAction } from '../../redux/filters/filters.slice';
 import { selectFilter } from '../../redux/selectors';
+import { IoIosSearch } from 'react-icons/io';
 
 export const SearchBox = () => {
   const dispatch = useDispatch();
@@ -13,7 +14,8 @@ export const SearchBox = () => {
 
   return (
     <div className={css.wrap}>
-      <label className={css.label}>Find information by name </label>
+      <IoIosSearch className={css.icon} />
+      <label className={css.label}>Search</label>
       <input
         className={css.input}
         type="text"

@@ -25,13 +25,16 @@ body {
   margin: 0 auto;
   max-width: 428px;
   height: 800px;
-  /* padding: 0 16px; */
-  background-color: #4880ff;
+  background-color: #4880ff; /* Оригінальний фон */
+  background-image: url('../assets/bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-  background-image: url('../assets/bg.png'); /* Путь к изображению */
-  background-size: cover; /* Масштабирует изображение, чтобы полностью заполнить элемент */
-  background-position: center; /* Центрирует изображение */
-  background-repeat: no-repeat; /* Отменяет повторение изображения */
+body.gray-background {
+  background-color: #f5f6fa; /* Сірий фон при логінації */
+  background-image: none;
 }
 
 @media screen and (min-width: 768px) {

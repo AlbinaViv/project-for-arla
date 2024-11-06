@@ -21,7 +21,6 @@ export default function Dashboard() {
     <>
       <DocumentTitle>Dashboard</DocumentTitle>
       {/* <ContactForm /> */}
-      <SearchBox />
       <div>{isLoading && <Loader />}</div>
       {/* <ContactList /> */}
     </>
