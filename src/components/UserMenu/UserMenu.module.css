@@ -8,11 +8,23 @@
 
 .username {
   color: #404040;
+  width: 50%;
+}
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .button {
   padding: 10px 20px;
   box-shadow: -1px -1px 5px white;
+  width: 80px;
+  text-align: center;
+  display: flex; /* Додаємо Flexbox */
+  justify-content: center; /* Центруємо по горизонталі */
+  align-items: center; /* Центруємо по вертикалі */
 }
 .button:hover {
   box-shadow: -2px -2px 5px white;
