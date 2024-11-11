@@ -84,7 +84,7 @@ export const LoginForm = () => {
             >
               Log In
             </Button>
-            <Box className={css.title} textAlign="center" mt={2}>
+            <Box className={css.paragraph} textAlign="center" mt={2}>
               Don’t have an account?{' '}
               <Link to="/register" className={css.link}>
                 Create Account

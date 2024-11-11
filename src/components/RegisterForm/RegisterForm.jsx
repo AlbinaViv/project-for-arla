@@ -96,7 +96,7 @@ export const RegisterForm = () => {
             >
               Register
             </Button>
-            <Box className={css.title} textAlign="center" mt={2}>
+            <Box className={css.paragraph} textAlign="center" mt={2}>
               Already have an account?{' '}
               <Link to="/login" className={css.link}>
                 Login{' '}
