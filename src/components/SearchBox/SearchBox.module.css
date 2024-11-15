@@ -1,4 +1,6 @@
 .wrap {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -10,26 +12,32 @@
 }
 
 .input {
-  fill: #f5f6fa;
-  width: 300px;
+  width: 100%;
   height: 38px;
-  box-sizing: border-box;
+  padding: 10px 10px 10px 50px; /* Отступ слева для label */
   border: 0.6px solid rgb(213, 213, 213);
   border-radius: 19px;
   background: rgb(245, 246, 250);
+  box-sizing: border-box;
 }
 
 .label {
   position: absolute;
-  top: 5%;
-  left: 21%;
-  left: 23%;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(136, 138, 140);
   font-size: 14px;
-  font-weight: 400;
-  line-height: 19px;
-  letter-spacing: 0px;
-  text-align: center;
-  color: rgb(136 138 140);
+  pointer-events: none;
+  transition: 0.2s ease all;
+}
+
+/* Сдвигаем label вверх, если input заполнен */
+.input:focus + .label,
+.input:not(:placeholder-shown) + .label {
+  top: 5px;
+  font-size: 12px;
+  color: rgb(100, 100, 100); /* Немного затемняем цвет при активации */
 }
 
 .input:hover {
@@ -38,10 +46,12 @@
 .input:active {
   box-shadow: inset 1px 1px 2px;
 }
+
 .icon {
   position: absolute;
-  top: 5%;
-  left: 21%;
+  left: 25px;
+  top: 50%;
+  transform: translateY(-50%);
   fill: rgb(136 138 140);
   width: 18px;
   height: 18px;

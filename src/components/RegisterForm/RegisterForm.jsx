@@ -36,9 +36,9 @@ export const RegisterForm = () => {
           <Form className={css.form}>
             <Box className={css.field}>
               <Field
-                name="email"
+                name="name"
                 as={TextField}
-                label="Email"
+                label="Name"
                 fullWidth
                 variant="outlined"
                 className={css.input}

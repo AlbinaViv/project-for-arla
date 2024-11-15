@@ -1,16 +1,17 @@
 import css from './SearchBox.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { filtersContactAction } from '../../redux/filters/filters.slice';
-import { selectFilter } from '../../redux/selectors';
 import { IoIosSearch } from 'react-icons/io';
-
+import milkData from '../Dashboard/data.json';
+import { useState } from 'react';
 export const SearchBox = () => {
-  const dispatch = useDispatch();
+  const [filterValue, setFilterValue] = useState('');
 
-  const handleFilterChange = e =>
-    dispatch(filtersContactAction(e.target.value.trim().toLowerCase()));
+  const handleFilterChange = e => {
+    setFilterValue(e.target.value.trim().toLowerCase());
+  };
 
-  const value = useSelector(selectFilter);
+  const filteredData = milkData.filter(item =>
+    item.Farm_ID.toString().toLowerCase().includes(filterValue)
+  );
 
   return (
     <div className={css.wrap}>
@@ -20,9 +21,20 @@ export const SearchBox = () => {
         className={css.input}
         type="text"
         id="name"
-        value={value}
+        value={filterValue}
         onChange={handleFilterChange}
       />
+      {/* <div>
+        {filteredData.length === 0 ? (
+          <p>No results found</p> // Если нет результатов
+        ) : (
+          <ul>
+            {filteredData.map(item => (
+              <li key={item.Farm_ID}></li> // Выводим Farm_ID
+            ))}
+          </ul>
+        )}
+      </div> */}
     </div>
   );
 };

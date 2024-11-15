@@ -24,7 +24,7 @@ a:hover {
 body {
   margin: 0 auto;
   max-width: 428px;
-  height: 800px;
+  min-height: 800px;
   background-color: #4880ff; /* Оригінальний фон */
   background-image: url('../assets/bg.png');
   background-size: cover;

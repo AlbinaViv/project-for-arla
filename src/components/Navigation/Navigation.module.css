@@ -11,6 +11,7 @@
   color: #10df33;
 }
 .nav {
+  position: relative;
   display: flex;
   height: 70px;
   padding-top: 13px;

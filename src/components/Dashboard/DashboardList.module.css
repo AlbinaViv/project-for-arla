@@ -1,9 +1,24 @@
-.contactList {
+.container {
   display: flex;
-  flex-wrap: wrap; /* Разрешает перенос элементов на следующую строку */
-  gap: 20px;
-  justify-content: left;
+  flex-wrap: wrap;
+  gap: 20px; /* Відстань між картинками */
+  justify-content: space-between;
 }
 
-@media screen and (min-width: 768px) {
+.title {
+  color: #202224;
+
+  font-size: 13px;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.chartContainer {
+  width: 48%; /* Два графіки в ряд, кожен займає половину ширини */
+  margin-bottom: 20px; /* Відстань між рядками */
+  border-radius: 14px;
+
+  box-shadow: 6px 6px 54px 0px rgba(0, 0, 0, 0.05);
+  background: rgb(255, 255, 255);
 }
