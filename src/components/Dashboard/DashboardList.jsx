@@ -22,6 +22,15 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 export const DashboardList = () => {
   const [data, setData] = useState([]);
 
+  const newData = data.map(data => {
+    const idFarmArr = data.Farm_ID.split('');
+
+    const idFarm = idFarmArr.slice(5, idFarmArr.length).join('');
+    console.log(idFarm);
+
+    return { ...data, Farm_ID: idFarm };
+  });
+
   useEffect(() => {
     setData(milkData);
   }, []);
@@ -32,7 +41,7 @@ export const DashboardList = () => {
       <div className={styles.chartContainer}>
         <h3 className={styles.title}>Volume of Milk (litres) by Farm</h3>
         <ResponsiveContainer width="100%" height={300}>
-          <BarChart data={data}>
+          <BarChart data={newData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis
               dataKey="Farm_ID"
@@ -60,7 +69,7 @@ export const DashboardList = () => {
       <div className={styles.chartContainer}>
         <h3 className={styles.title}>Temperature by Farm</h3>
         <ResponsiveContainer width="100%" height={300}>
-          <LineChart data={data}>
+          <LineChart data={newData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="Farm_ID" />
             <YAxis
@@ -85,7 +94,7 @@ export const DashboardList = () => {
       <div className={styles.chartContainer}>
         <h3 className={styles.title}>Fat and Protein Content by Farm</h3>
         <ResponsiveContainer width="100%" height={300}>
-          <LineChart data={data}>
+          <LineChart data={newData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="Farm_ID" />
             <YAxis
@@ -119,7 +128,7 @@ export const DashboardList = () => {
         <ResponsiveContainer width="100%" height={300}>
           <PieChart>
             <Pie
-              data={data}
+              data={newData}
               dataKey="Fat_percent"
               nameKey="Farm_ID"
               cx="50%"
