@@ -26,7 +26,6 @@ export const DashboardList = () => {
     const idFarmArr = data.Farm_ID.split('');
 
     const idFarm = idFarmArr.slice(5, idFarmArr.length).join('');
-    console.log(idFarm);
 
     return { ...data, Farm_ID: idFarm };
   });

@@ -10,15 +10,27 @@
   color: #404040;
   width: 50%;
 }
+.btAvatar {
+  display: inline-block;
+}
+
 .avatar {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 0.6px solid rgb(213, 213, 213);
+  border: 1px solid transparent; /* Початковий колір рамки */
+  border-radius: 50%; /* Робить рамку круглою */
+  transition: border-color 0.3s ease; /* Плавний перехід кольору рамки */
+  cursor: pointer; /* Зміна курсора при наведенні */
+}
+
+.avatar:hover {
+  border-color: #4880ff; /* Синій колір рамки при наведенні */
+}
+.btAvatar:active {
+  border-color: rgb(52, 66, 223);
+  box-shadow: inset 1px 1px 2px;
 }
 
 .button {
+  cursor: pointer;
   padding: 10px 20px;
   box-shadow: -1px -1px 5px white;
   width: 80px;
@@ -34,3 +46,49 @@
   color: white;
   box-shadow: inset 1px 1px 2px;
 }
+
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: rgb(242 235 235);
+  max-width: 800px;
+  max-height: 600px;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.closeButton {
+  border-radius: 6px;
+  background-color: #4880ff;
+  border: 1px solid transparent;
+  padding: 10px 20px;
+  box-shadow: -1px -1px 5px white;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.strong {
+  color: black;
+}
+
+/* .modalImage {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+} */
