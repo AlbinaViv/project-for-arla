@@ -15,7 +15,7 @@ import {
   Cell,
 } from 'recharts';
 import milkData from './data.json';
-import styles from './DashboardList.module.css';
+import css from './DashboardList.module.css';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
@@ -35,11 +35,11 @@ export const DashboardList = () => {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className={css.container}>
       {/* Volume Chart */}
-      <div className={styles.chartContainer}>
-        <h3 className={styles.title}>Volume of Milk (litres) by Farm</h3>
-        <ResponsiveContainer width="100%" height={300}>
+      <div className={css.chartContainer}>
+        <h3 className={css.title}>Volume of Milk (litres) by Farm</h3>
+        <ResponsiveContainer className={css.respons}>
           <BarChart data={newData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis
@@ -65,9 +65,9 @@ export const DashboardList = () => {
       </div>
 
       {/* Temperature Chart */}
-      <div className={styles.chartContainer}>
-        <h3 className={styles.title}>Temperature by Farm</h3>
-        <ResponsiveContainer width="100%" height={300}>
+      <div className={css.chartContainer}>
+        <h3 className={css.title}>Temperature by Farm</h3>
+        <ResponsiveContainer className={css.respons}>
           <LineChart data={newData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="Farm_ID" />
@@ -90,9 +90,9 @@ export const DashboardList = () => {
       </div>
 
       {/* Fat and Protein Comparison */}
-      <div className={styles.chartContainer}>
-        <h3 className={styles.title}>Fat and Protein Content by Farm</h3>
-        <ResponsiveContainer width="100%" height={300}>
+      <div className={css.chartContainer}>
+        <h3 className={css.title}>Fat and Protein Content by Farm</h3>
+        <ResponsiveContainer className={css.respons}>
           <LineChart data={newData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="Farm_ID" />
@@ -122,9 +122,9 @@ export const DashboardList = () => {
       </div>
 
       {/* Pie Chart: Fat Distribution */}
-      <div className={styles.chartContainer}>
-        <h3 className={styles.title}>Fat Distribution Across Farms</h3>
-        <ResponsiveContainer width="100%" height={300}>
+      <div className={css.chartContainer}>
+        <h3 className={css.title}>Fat Distribution Across Farms</h3>
+        <ResponsiveContainer className={css.respons}>
           <PieChart>
             <Pie
               data={newData}
@@ -149,9 +149,9 @@ export const DashboardList = () => {
       </div>
 
       {/* Pie Chart: Protein Distribution */}
-      <div className={styles.chartContainer}>
-        <h3 className={styles.title}>Protein Distribution Across Farms</h3>
-        <ResponsiveContainer width="100%" height={300}>
+      <div className={css.chartContainer}>
+        <h3 className={css.title}>Protein Distribution Across Farms</h3>
+        <ResponsiveContainer className={css.respons}>
           <PieChart>
             <Pie
               data={data}
