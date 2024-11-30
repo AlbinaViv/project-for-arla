@@ -24,9 +24,7 @@ export const DashboardList = () => {
 
   const newData = data.map(data => {
     const idFarmArr = data.Farm_ID.split('');
-
     const idFarm = idFarmArr.slice(5, idFarmArr.length).join('');
-
     return { ...data, Farm_ID: idFarm };
   });
 
@@ -39,7 +37,7 @@ export const DashboardList = () => {
       {/* Volume Chart */}
       <div className={css.chartContainer}>
         <h3 className={css.title}>Volume of Milk (litres) by Farm</h3>
-        <ResponsiveContainer className={css.respons}>
+        <ResponsiveContainer width="100%" height={300}>
           <BarChart data={newData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis
@@ -67,7 +65,7 @@ export const DashboardList = () => {
       {/* Temperature Chart */}
       <div className={css.chartContainer}>
         <h3 className={css.title}>Temperature by Farm</h3>
-        <ResponsiveContainer className={css.respons}>
+        <ResponsiveContainer width="100%" height={300}>
           <LineChart data={newData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="Farm_ID" />
@@ -92,7 +90,7 @@ export const DashboardList = () => {
       {/* Fat and Protein Comparison */}
       <div className={css.chartContainer}>
         <h3 className={css.title}>Fat and Protein Content by Farm</h3>
-        <ResponsiveContainer className={css.respons}>
+        <ResponsiveContainer width="100%" height={300}>
           <LineChart data={newData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="Farm_ID" />
@@ -124,7 +122,7 @@ export const DashboardList = () => {
       {/* Pie Chart: Fat Distribution */}
       <div className={css.chartContainer}>
         <h3 className={css.title}>Fat Distribution Across Farms</h3>
-        <ResponsiveContainer className={css.respons}>
+        <ResponsiveContainer width="100%" height={300}>
           <PieChart>
             <Pie
               data={newData}
@@ -151,10 +149,10 @@ export const DashboardList = () => {
       {/* Pie Chart: Protein Distribution */}
       <div className={css.chartContainer}>
         <h3 className={css.title}>Protein Distribution Across Farms</h3>
-        <ResponsiveContainer className={css.respons}>
+        <ResponsiveContainer width="100%" height={300}>
           <PieChart>
             <Pie
-              data={data}
+              data={newData}
               dataKey="Protein_percent"
               nameKey="Farm_ID"
               cx="50%"
